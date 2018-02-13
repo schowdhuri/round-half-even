@@ -1,6 +1,7 @@
 # Round Half to Even
 
 A utility for tie-breaking rounding, also called Banker's Rounding or Commercial Rounding.
+
 Read more: https://en.wikipedia.org/wiki/Rounding#Round_half_to_even
 
 ## Demo
