@@ -41,7 +41,7 @@ roundHalfEven(1.435, 2); // returns 1.44
 ```
 
 ## Development
-Make changes to `app/index.js`. Generate the browser-ready package:
+Make changes to `src/index.js`. Generate the browser-ready package:
 
 ```
 npm run build

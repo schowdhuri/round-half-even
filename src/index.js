@@ -1,6 +1,6 @@
 const isEven = d => d%2===0;
 
-const round = (num, numDecimals=2) => {
+const roundHalfEven = (num, numDecimals=2) => {
     // https://en.wikipedia.org/wiki/Rounding#Round_half_to_even
     if(typeof(num)!=="number")
         throw new Error("Unrecognised format");
@@ -61,4 +61,4 @@ const round = (num, numDecimals=2) => {
     return parseFloat(`${intPart}.${newFractPart}${nextDig}`);
 };
 
-export default round;
+module.exports = roundHalfEven;

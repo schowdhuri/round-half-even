@@ -2,7 +2,7 @@ const path = require("path");
 const webpack = require("webpack")
 
 module.exports = {
-    entry: "./app/helper.js",
+    entry: "./src/helper.js",
     module: {
         rules: [{
             test: /\.js$/,
