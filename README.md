@@ -1,6 +1,10 @@
 # Round Half to Even
 
-A utility for tie-breaking rounding, also called Banker's Rounding or Commercial Rounding. Read more: https://en.wikipedia.org/wiki/Rounding#Round_half_to_even
+A utility for tie-breaking rounding, also called Banker's Rounding or Commercial Rounding.
+Read more: https://en.wikipedia.org/wiki/Rounding#Round_half_to_even
+
+## Demo
+https://rawgit.com/schowdhuri/round-half-even/master/demo/index.html
 
 ## Installation
 
