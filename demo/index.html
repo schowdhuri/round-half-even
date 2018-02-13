@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Round Half-Even</title>
+</head>
+<body>
+    <input type="number" id="num" value="1.2251"  placeholder="Value to round"/>
+    <input type="number" id="decimals" value="2"  placeholder="Number of decimal places" />
+    <button id="btn-round">Round</button>
+    <div id="result"></div>
+
+    <script src="../dist/round-half-even.min.js"></script>
+    <script>
+        (function() {
+            const resultDiv = document.getElementById("result");
+
+            document.getElementById("btn-round").addEventListener("click", function() {
+                const num = parseFloat(document.getElementById("num").value);
+                const numDecimals = parseFloat(document.getElementById("decimals").value);
+                resultDiv.innerHTML = roundHalfEven(num, numDecimals);
+            }, false);
+        })();
+    </script>
+</body>
+</html>

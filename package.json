@@ -1,0 +1,26 @@
+{
+  "name": "round-half-even",
+  "version": "1.0.0",
+  "description": "Rounds half-even",
+  "main": "app/index.js",
+  "browser": "dist/round-half-even.min.js",
+  "scripts": {
+    "build": "node_modules/.bin/webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schowdhuri/round-half-even.git"
+  },
+  "author": "Subir Chowdhuri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schowdhuri/round-half-even/issues"
+  },
+  "homepage": "https://github.com/schowdhuri/round-half-even#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.11.0"
+  }
+}
