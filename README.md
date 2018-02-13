@@ -1,6 +1,6 @@
-# Round Half Even
+# Round Half to Even
 
-Banker's rounding utility. Read more: https://en.wikipedia.org/wiki/Rounding#Round_half_to_even
+A utility for tie-breaking rounding, also called Banker's Rounding or Commercial Rounding. Read more: https://en.wikipedia.org/wiki/Rounding#Round_half_to_even
 
 ## Installation
 
@@ -10,31 +10,41 @@ Using npm:
 npm install --save round-half-even
 ```
 
-Within the browser:
+Or yarn:
 
-```html
-<script src="https://unpkg.com/round-half-even"></script>
 ```
-
+yarn add round-half-even
+```
 ## Usage
 
-```
-roundHalfEven(number:)
+```js
+roundHalfEven(floatingPointValue, numberOfDecimals)
 ```
 
-Example:
+### Node.js
 ```js
+import roundHalfEven from "round-half-even";
 roundHalfEven(1.435, 2); // returns 1.44
 ```
 
-## License
+### Within the browser:
 
-The MIT License (MIT)
+```html
+<script src="https://unpkg.com/round-half-even"></script>
+<script>
+  roundHalfEven(1.435, 2); // returns 1.44
+</script>
+```
 
-Copyright (c) 2018 Subir Chowdhuri.
+## Development
+Make changes to `app/index.js`. Generate the browser-ready package:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+```
+npm run build
+```
+or
+```
+yarn build
+```
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+## [MIT Licensed](LICENSE)
