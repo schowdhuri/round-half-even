@@ -5,28 +5,31 @@ A utility for tie-breaking rounding, also called Banker's Rounding or Commercial
 Read more: https://en.wikipedia.org/wiki/Rounding#Round_half_to_even
 
 ## Demo
+
 https://rawgit.com/schowdhuri/round-half-even/master/demo/index.html
 
 ## Installation
 
 Using npm:
 
-```
+```sh
 npm install --save round-half-even
 ```
 
 Or yarn:
 
-```
+```sh
 yarn add round-half-even
 ```
+
 ## Usage
 
 ```js
-roundHalfEven(floatingPointValue, numberOfDecimals)
+roundHalfEven(floatingPointValue, numberOfDecimals);
 ```
 
 ### Node.js
+
 ```js
 import roundHalfEven from "round-half-even";
 roundHalfEven(1.435, 2); // returns 1.44
@@ -42,14 +45,29 @@ roundHalfEven(1.435, 2); // returns 1.44
 ```
 
 ## Development
+
 Make changes to `src/index.js`. Generate the browser-ready package:
 
-```
+```sh
 npm run build
 ```
+
 or
-```
+
+```sh
 yarn build
+```
+
+Run tests:
+
+```sh
+npm test
+```
+
+or
+
+```sh
+yarn test
 ```
 
 ## [MIT Licensed](LICENSE)
