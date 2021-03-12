@@ -18,6 +18,9 @@ const roundHalfEven = (value, numDecimals = 2) => {
   if (value < 0) {
     return -roundHalfEven(-value);
   }
+  if (numDecimals === 0) {
+    return roundHalfEven(value / 10, 1) * 10;
+  }
   // convert to string; remove trailing 0s
   const strNum = `${value}`.replace(/0+$/, "");
   const decimalIndex = strNum.indexOf(".");

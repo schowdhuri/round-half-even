@@ -53,8 +53,20 @@ describe("Round Half-Even", () => {
     expect(roundHalfEven(0, 2)).toEqual(0);
   });
 
-  it("should handle 0 decimal places", () => {
+  it("should handle 0 decimal places [1]", () => {
     expect(roundHalfEven(1.234, 0)).toEqual(1);
+  });
+
+  it("should handle 0 decimal places [2]", () => {
+    expect(roundHalfEven(2.9, 0)).toEqual(3);
+  });
+
+  it("should handle 0 decimal places [3]", () => {
+    expect(roundHalfEven(2.5, 0)).toEqual(2);
+  });
+
+  it("should handle 0 decimal places [4]", () => {
+    expect(roundHalfEven(3.5, 0)).toEqual(4);
   });
 
   it("should treat negative value of decimal places as 0", () => {
