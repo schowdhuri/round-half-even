@@ -1,6 +1,6 @@
 {
   "name": "round-half-even",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A utility for tie-breaking rounding, also called Banker's Rounding or Commercial Rounding",
   "main": "src/index.js",
   "browser": "dist/round-half-even.min.js",
