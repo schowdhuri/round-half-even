@@ -45,6 +45,14 @@ describe("Round Half-Even", () => {
     expect(roundHalfEven(-1234, 2)).toEqual(-1234);
   });
 
+  it("should work for negative numbers with N decimal places [1]", () => {
+    expect(roundHalfEven(-104.8936316, 6)).toEqual(-104.893632);
+  });
+
+  it("should work for negative numbers with N decimal places [2]", () => {
+    expect(roundHalfEven(-83.0715644, 7)).toEqual(-83.0715644);
+  });
+
   it("should work even if numDecimals > number of digits after decimal in the input", () => {
     expect(roundHalfEven(1.2, 4)).toEqual(1.2);
   });
