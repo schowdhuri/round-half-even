@@ -16,7 +16,7 @@ const roundHalfEven = (value, numDecimals = 2) => {
     throw new Error("value must be a number type");
   }
   if (value < 0) {
-    return -roundHalfEven(-value);
+    return -roundHalfEven(-value, numDecimals);
   }
   if (numDecimals === 0) {
     return roundHalfEven(value / 10, 1) * 10;
