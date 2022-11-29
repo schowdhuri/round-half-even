@@ -27,7 +27,7 @@ const roundHalfEven = (value, numDecimals = 2) => {
   }
   // convert to string; remove trailing 0s
   const isExponentialForm = value.toString().includes('e') || value.toString().includes('E');
-  const strNum = (numDecimals > 0 && isExponentialForm ? value.toFixed(MAX_DECIMALS_ALLOWED).toString() : value.toString()).replace(/0+$/, "");
+  const strNum = (isExponentialForm ? value.toFixed(MAX_DECIMALS_ALLOWED).toString() : value.toString()).replace(/0+$/, "");
   const decimalIndex = strNum.indexOf(".");
   if (decimalIndex < 0) {
     // no fractional part

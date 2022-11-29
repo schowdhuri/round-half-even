@@ -96,5 +96,6 @@ describe("Round Half-Even", () => {
     expect(roundHalfEven(1e-6, 6)).toEqual(0.000001);
     expect(roundHalfEven(12e-6, 6)).toEqual(0.000012);
     expect(roundHalfEven(.1e-1)).toEqual(0.01)
+    expect(roundHalfEven(11.1e-1, 0)).toEqual(1)
   });
 });
