@@ -1,4 +1,5 @@
 const isEven = (d) => d % 2 === 0;
+const MAX_DECIMALS_ALLOWED = 20;
 
 /**
  * Round Half-Even (Banker's Rounding) Utility
@@ -21,8 +22,12 @@ const roundHalfEven = (value, numDecimals = 2) => {
   if (numDecimals === 0) {
     return roundHalfEven(value / 10, 1) * 10;
   }
+  if (numDecimals > MAX_DECIMALS_ALLOWED) {
+    throw new Error(`Cannot handle more than ${MAX_DECIMALS_ALLOWED} decimals`)
+  }
   // convert to string; remove trailing 0s
-  const strNum = `${value}`.replace(/0+$/, "");
+  const isExponentialForm = value.toString().includes('e') || value.toString().includes('E');
+  const strNum = (numDecimals > 0 && isExponentialForm ? value.toFixed(MAX_DECIMALS_ALLOWED).toString() : value.toString()).replace(/0+$/, "");
   const decimalIndex = strNum.indexOf(".");
   if (decimalIndex < 0) {
     // no fractional part

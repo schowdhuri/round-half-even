@@ -84,4 +84,11 @@ describe("Round Half-Even", () => {
   it("should handle 0 input value and 0 decimal places", () => {
     expect(roundHalfEven(0, 0)).toEqual(0);
   });
+
+  it("should handle numbers with exponentials", () => {
+    expect(roundHalfEven(1E-7, 6)).toEqual(0);
+    expect(roundHalfEven(1e-6, 6)).toEqual(0.000001);
+    expect(roundHalfEven(12e-6, 6)).toEqual(0.000012);
+    expect(roundHalfEven(.1e-1)).toEqual(0.01)
+  });
 });
