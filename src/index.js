@@ -23,11 +23,16 @@ const roundHalfEven = (value, numDecimals = 2) => {
     return roundHalfEven(value / 10, 1) * 10;
   }
   if (numDecimals > MAX_DECIMALS_ALLOWED) {
-    throw new Error(`Cannot handle more than ${MAX_DECIMALS_ALLOWED} decimals`)
+    throw new Error(`Cannot handle more than ${MAX_DECIMALS_ALLOWED} decimals`);
   }
   // convert to string; remove trailing 0s
-  const isExponentialForm = value.toString().includes('e') || value.toString().includes('E');
-  const strNum = (isExponentialForm ? value.toFixed(MAX_DECIMALS_ALLOWED).toString() : value.toString()).replace(/0+$/, "");
+  const isExponentialForm =
+    value.toString().includes("e") || value.toString().includes("E");
+  const strNum = (
+    isExponentialForm
+      ? value.toFixed(MAX_DECIMALS_ALLOWED).toString()
+      : value.toString()
+  ).replace(/0+$/, "");
   const decimalIndex = strNum.indexOf(".");
   if (decimalIndex < 0) {
     // no fractional part
