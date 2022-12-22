@@ -21,6 +21,12 @@ describe("Round Half-Even", () => {
     }).toThrowError("value must be a number type");
   });
 
+  it("should throw if more than 20 places of accuracy are requested", () => {
+    expect(() => {
+      roundHalfEven(1, 21);
+    }).toThrowError("Cannot handle more than 20 decimals");
+  });
+
   it("should handle negative fractions", () => {
     expect(roundHalfEven(-1.2345, 2)).toEqual(-1.23);
   });
@@ -83,5 +89,13 @@ describe("Round Half-Even", () => {
 
   it("should handle 0 input value and 0 decimal places", () => {
     expect(roundHalfEven(0, 0)).toEqual(0);
+  });
+
+  it("should handle numbers with exponentials", () => {
+    expect(roundHalfEven(1e-7, 6)).toEqual(0);
+    expect(roundHalfEven(1e-6, 6)).toEqual(0.000001);
+    expect(roundHalfEven(12e-6, 6)).toEqual(0.000012);
+    expect(roundHalfEven(0.1e-1)).toEqual(0.01);
+    expect(roundHalfEven(11.1e-1, 0)).toEqual(1);
   });
 });
