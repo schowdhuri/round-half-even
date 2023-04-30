@@ -1,15 +1,15 @@
-const isEven = (d) => d % 2 === 0;
+const isEven = (d: number) => d % 2 === 0;
 const MAX_DECIMALS_ALLOWED = 20;
 
 /**
  * Round Half-Even (Banker's Rounding) Utility
  * https://en.wikipedia.org/wiki/Rounding#Round_half_to_even
  *
- * @param {number} value - the value to operate on
- * @param {number} numDecimals - number of decimal places
- * @returns {number} `value` rounded to `numDecimal` places
+ * @param value - the value to operate on
+ * @param numDecimals - number of decimal places
+ * @returns `value` rounded to `numDecimal` places
  */
-const roundHalfEven = (value, numDecimals = 2) => {
+function roundHalfEven(value: number, numDecimals = 2): number {
   if (typeof value === "undefined") {
     throw new Error("value is required");
   }
@@ -40,7 +40,7 @@ const roundHalfEven = (value, numDecimals = 2) => {
   }
   let intPart = strNum.slice(0, decimalIndex);
   if (intPart.length == 0) {
-    intPart = 0;
+    intPart = "0";
   }
   let fractPart = strNum.slice(decimalIndex + 1); // extract fractional part
   if (fractPart.length < numDecimals) {
@@ -86,8 +86,8 @@ const roundHalfEven = (value, numDecimals = 2) => {
     }
     newFractPart = `${d}${newFractPart}`;
   }
-  intPart = parseInt(intPart, 10) + carriedOver;
-  return parseFloat(`${intPart}.${newFractPart}${nextDig}`);
+  const output = parseInt(intPart, 10) + carriedOver;
+  return parseFloat(`${output}.${newFractPart}${nextDig}`);
 };
 
-module.exports = roundHalfEven;
+export default roundHalfEven

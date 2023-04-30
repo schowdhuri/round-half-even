@@ -1,4 +1,4 @@
-const roundHalfEven = require("./index");
+import roundHalfEven from '.'
 
 describe("Round Half-Even", () => {
   it("should round to the specified number of decimal places", () => {
@@ -9,14 +9,16 @@ describe("Round Half-Even", () => {
     expect(roundHalfEven(12.345)).toEqual(12.34);
   });
 
-  it("should throw an error when input value is not passed", () => {
+  test("should throw an error when input value is not passed", () => {
     expect(() => {
+      // @ts-expect-error testing out missing arguments
       roundHalfEven();
     }).toThrowError("value is required");
   });
 
   it("should throw an error when input value is not a number type", () => {
     expect(() => {
+      // @ts-expect-error testing string in place of number
       roundHalfEven("1400.16");
     }).toThrowError("value must be a number type");
   });

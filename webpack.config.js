@@ -2,13 +2,19 @@ const path = require("path");
 const webpack = require("webpack")
 
 module.exports = {
-    entry: "./src/helper.js",
+    entry: "./src/index.ts",
+    mode: "production",
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.json']
+    },
     module: {
-        rules: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: "babel-loader"
-        }]
+        rules: [
+            {
+                test: /\.ts?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+        ],
     },
     output: {
         filename: "round-half-even.min.js",
@@ -16,7 +22,4 @@ module.exports = {
         library: "roundHalfEven",
         libraryTarget: "umd"
     },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin()
-    ]
 };
